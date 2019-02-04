@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://use.typekit.net/olo2rze.css");
+// Font Family
+$font-family: 'Raleway',
+sans-serif;
+$header-font: "Zeitung",
+sans-serif;
+$base-line-height: 1;
+$default-padding: 0.25em 0.75em;
+$default-margin: 0.25em 0.5em;
+$default-radius: .5em;
+$full-height: 100vh;
+$base-font-size: .75em;
+$elements: div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p;
+$headings: h1,
+h2,
+h3,
+h4,
+h5,
+h6;
+$text: h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p;
+$colors: ( secondary: #95575C,
+muted: #9A9DA4,
+bg: #1c2833,
+info: #413840,
+primary:#192050,
+dark: #090B13,
+light: #F6F7F7,
+);
+$breakpoints: ( sm: 540px,
+md: 720px,
+lg: 960px,
+xl: 1140px) !default;
+$defaults: ( padding: 0.25em 0.75em,
+margin: 0.5em 0.25em,
+border-radius: 0.5em,
+border-width: 1.5px,
+border-color: dark,
+lighten: 15%);
+%flex-row {
+   display: flex;
+   flex-direction: row;
+}
+
+%padding {
+   padding: 1em;
+}
+
+%border-radius {
+   border-radius: .5em;
+}
