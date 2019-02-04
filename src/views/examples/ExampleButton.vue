@@ -1,11 +1,14 @@
 <template>
-	<div class="home">
-		<SudoHero title="Home"/>
+	<div>
+		<p>Buttons</p>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "Home"
+	name: "Buttons"
 };
 </script>
+
+<style scoped>
+</style>

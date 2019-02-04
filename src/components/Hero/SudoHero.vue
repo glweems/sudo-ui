@@ -1,20 +1,22 @@
 <template>
 	<div class="hero">
-		<h1 class="heading">HERO</h1>
+		<h1 class="heading">{{title}}</h1>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "SudoHero"
+	name: "SudoHero",
+	props: { title: { type: String, required: false } }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/app.scss";
-.hero {
-	@extend %container-fluid;
-	@include background(dark);
-	@include color(light);
-}
+	@import "@/scss/app.scss";
+	.hero {
+		@extend %container-fluid;
+		@extend %border-radius;
+		@include background(bg);
+		@include color(light);
+	}
 </style>

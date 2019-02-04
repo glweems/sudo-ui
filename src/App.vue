@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
 		<SudoNavbar :pages="pages" :brand="brand"/>
-		<router-view/>
+		<main role="main">
+			<router-view/>
+		</main>
 	</div>
 </template>
 <script>
