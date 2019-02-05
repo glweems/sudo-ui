@@ -28,6 +28,7 @@ export default {
 	name: "Docs",
 	data() {
 		return {
+			publicPath: process.env.BASE_URL,
 			demo: {
 				SudoHero: {
 					subtitle: "This is the SudoHero Component."
