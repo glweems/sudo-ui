@@ -29,13 +29,14 @@ $colors: (
   info: #413840,
   primary: #192050,
   dark: #090b13,
-  light: #f6f7f7
+  light: #f6f7f7,
+  white: #fff
 );
 
 $breakpoints: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
   xl: 1140px
 ) !default;
 
