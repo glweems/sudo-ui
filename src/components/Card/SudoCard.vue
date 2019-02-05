@@ -6,8 +6,11 @@
 			<img :src="img">
 		</div>
 		<div class="body">
-			<p class="title">Default Card</p>
-			<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<p class="title">{{title}}</p>
+			<p>{{body}}</p>
+		</div>
+		<div v-if="footer" class="footer">
+			<div>{{footer}}</div>
 		</div>
 	</div>
 </template>
@@ -21,8 +24,12 @@ export default {
 		body: { type: String, required: false },
 		footer: { type: String, required: false },
 		img: { type: String, required: false }
+	},
+	data() {
+		return {
+			publicPath: process.env.BASE_URL
+		};
 	}
-	// components: { CardImg }
 };
 </script>
 
@@ -100,13 +107,23 @@ export default {
 			// @include margin-bottom(1em);
 		}
 		.footer {
+			background-color: rgba(0, 0, 0, 0.03);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+			border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+			box-sizing: border-box;
+			margin-bottom: 0;
+			padding: 0.75rem 1.25rem;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
-			// @include padding-x(1em);
-			// @include padding-top(.75em);
-			// @include padding-bottom(.75em);
-			// @include border-top(white);
+			justify-content: space-between; // @include padding-x(1em); // @include padding-top(.75em); // @include padding-bottom(.75em); // @include border-bottom(white);
+			.icon {
+				display: none;
+				transition: all 50ms ease-in-out;
+				justify-self: flex-end;
+				&:hover {
+					transform: scale(1.025);
+				}
+			}
 			.icon {
 				transition: all 50ms ease-in-out;
 				justify-self: flex-end;

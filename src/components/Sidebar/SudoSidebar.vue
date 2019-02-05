@@ -29,7 +29,6 @@ export default {
 		padding: 0;
 		margin: 0;
 		width: 300px;
-		height: 3000px;
 		@include background(light);
 		@include color(secondary);
 		li {
@@ -42,7 +41,9 @@ export default {
 
 	@include mobile {
 		ul {
-			display: none;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
 		}
 	}
 </style>

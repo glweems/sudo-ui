@@ -14,9 +14,25 @@
 			</div>
 			<div class="example">
 				<h1>Default Card</h1>
-				<SudoCard/>
+				<SudoCard :title="demo.SudoCard.data.header" :body="demo.SudoCard.data.body"/>
+				<h1>Card with Header</h1>
+				<SudoCard
+					:header="demo.SudoCard.data.header"
+					:title="demo.SudoCard.data.title"
+					:body="demo.SudoCard.data.body"
+				/>
 				<h1>Card with Img</h1>
-				<SudoCard :img="`${publicPath}logo.png`"/>
+				<SudoCard
+					:img="demo.SudoCard.data.img"
+					:title="demo.SudoCard.data.title"
+					:body="demo.SudoCard.data.body"
+				/>
+				<h1>Card with Footer</h1>
+				<SudoCard
+					:title="demo.SudoCard.data.title"
+					:body="demo.SudoCard.data.body"
+					:footer="demo.SudoCard.data.footer"
+				/>
 			</div>
 		</div>
 	</div>
@@ -43,6 +59,7 @@ export default {
 					subtitle: "This is the SudoList Component.",
 					data: {
 						header: "SudoCard",
+						img: require("@/assets/logo.png"),
 						title: "Title",
 						body:
 							"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolor! Ipsam enim explicabo necessitatibus est. Laudantium eum, a adipisci ratione, sapiente minus quidem facilis illo distinctio, exercitationem cumque voluptas quod!",
@@ -80,5 +97,14 @@ export default {
 	.example {
 		padding: 1em;
 		border-bottom: 1px solid map-get($colors, muted);
+	}
+	@include mobile {
+		.docs {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
 	}
 </style>
