@@ -2,7 +2,7 @@
 	<ul class="sidebar">
 		<h3 v-if="title" class="title">{{title}}</h3>
 		<li v-for="(item, i) in items" :key="i">
-			<router-link :to="item" exact>{{item.name}}</router-link>
+			<router-link :to="item">{{item.name}}</router-link>
 		</li>
 	</ul>
 </template>
@@ -21,6 +21,8 @@ export default {
 	@import "@/scss/app.scss";
 
 	ul {
+		padding: 0;
+		margin: 0;
 		width: 300px;
 		height: 1000px;
 		@include background(light);
@@ -29,6 +31,12 @@ export default {
 			a {
 				@include color(dark);
 			}
+		}
+	}
+
+	@include mobile {
+		ul {
+			display: none;
 		}
 	}
 </style>

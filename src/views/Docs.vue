@@ -1,9 +1,14 @@
 <template>
 	<div class="docs">
 		<!-- <SudoHero title="Documentation"/> -->
-		<SudoSidebar title="title" :items="docs.components"/>
+		<SudoSidebar v-if="sidebarOpen" title="title" :items="docs.components"/>
 		<div class="content">
-			<router-view/>
+			<h1>Hero</h1>
+			<h4>Hero Component Settings</h4>
+			<SudoHero title="Hero Component"/>
+			<h1>Hero</h1>
+			<h4>Hero Component Settings</h4>
+			<HambugerButton text="Hero Component"/>
 		</div>
 	</div>
 </template>
@@ -13,7 +18,7 @@ import { mapState } from "vuex";
 export default {
 	name: "Docs",
 	computed: {
-		...mapState(["docs"])
+		...mapState(["docs", "sidebarOpen"])
 	}
 };
 </script>
@@ -22,12 +27,13 @@ export default {
 	@import "@/scss/app.scss";
 	.docs {
 		display: flex;
-		justify-content: start;
+		justify-content: flex-start;
+		align-content: flex-start;
+		align-items: flex-start;
 	}
 	.content {
 		width: 100%;
 		padding: 1em;
-
 		@include background(muted);
 	}
 </style>

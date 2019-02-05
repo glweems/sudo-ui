@@ -16,8 +16,9 @@ button {
   @extend %button-reset;
   font-size: 13px;
   text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 2px;
+  margin: 0 0.5em 0 0.5em;
+  //   font-weight: 600;
+  //   letter-spacing: 2px;
   transition: all 100ms ease-in-out;
   // @include padding-x(1em);
   // @include padding-y(.5em);

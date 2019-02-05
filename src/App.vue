@@ -1,17 +1,24 @@
 <template>
 	<div id="app">
 		<SudoNavbar :pages="pages" :brand="brand"/>
-		<main role="main">
-			<router-view/>
-		</main>
+		<router-view/>
+		<!-- <main role="main">
+			
+		</main>-->
 	</div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
 	name: "App",
+	created() {
+		this.IS_DEVICE_MOBILE();
+	},
+	methods: {
+		...mapMutations(["IS_DEVICE_MOBILE", "TEST"])
+	},
 	computed: {
-		...mapState(["pages", "brand"])
+		...mapState(["pages", "brand", "isMobileDevice"])
 	}
 };
 </script>

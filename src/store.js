@@ -12,8 +12,22 @@ export default new Vuex.Store({
     docs: {
       components: [{ name: "Hero" }, { name: "Button" }]
     },
-    brand: "Sudo Ui"
+    brand: "Sudo Ui",
+    isMobileDevice: false,
+    sidebarOpen: true
   },
-  mutations: {},
+  mutations: {
+    IS_DEVICE_MOBILE: state => {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
+      ) {
+        state.isMobileDevice = true;
+        state.sidebarOpen = false;
+      }
+    },
+    TOGGLE_SIDEBAR: state => {
+      state.sidebarOpen = !state.sidebarOpen;
+    }
+  },
   actions: {}
 });

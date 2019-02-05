@@ -40,6 +40,28 @@ $breakpoints: (
   xl: 1140px
 ) !default;
 
+$mobile-width: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 $defaults: (
   padding: 0.25em 0.75em,
   margin: 0.5em 0.25em,
@@ -64,4 +86,47 @@ $defaults: (
 
 %container-fluid {
   @extend %padding;
+}
+
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+  $vendor-prefixed-properties: transform background-clip background-size;
+  $result: ();
+  @each $prefix in $prefixes {
+    @if index($vendor-prefixed-properties, $property) {
+      $property: -#{$prefix}-#{$property};
+    }
+    $result: append($result, $property);
+  }
+  @return $result;
+}
+
+@function trans-prefix($transition, $prefix: moz) {
+  $prefixed: ();
+  @each $trans in $transition {
+    $prop-name: nth($trans, 1);
+    $vendor-prop-name: prefix($prop-name, $prefix);
+    $prop-vals: nth($trans, 2);
+    $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+  }
+
+  @return $prefixed;
+}
+
+@mixin transition($values...) {
+  $transitions: ();
+  @each $declaration in $values {
+    $prop: nth($declaration, 1);
+    $prop-opts: ();
+    $length: length($declaration);
+    @for $i from 2 through $length {
+      $prop-opts: append($prop-opts, nth($declaration, $i));
+    }
+    $trans: ($prop, $prop-opts);
+    $transitions: append($transitions, $trans, comma);
+  }
+
+  -webkit-transition: trans-prefix($transitions, webkit);
+  -moz-transition: trans-prefix($transitions, moz);
+  -o-transition: trans-prefix($transitions, o);
+  transition: $values;
 }

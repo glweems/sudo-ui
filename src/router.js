@@ -3,8 +3,6 @@ import Router from "vue-router";
 import Library from "@/library";
 import Home from "@/views/Home.vue";
 import Docs from "@/views/Docs";
-import ExampleHero from "@/views/examples/ExampleHero";
-import ExampleButton from "@/views/examples/ExampleButton";
 
 Vue.use(Router, Library);
 
@@ -21,14 +19,12 @@ export default new Router({
       component: Docs,
       children: [
         {
-          path: "hero",
-          name: "Hero",
-          component: ExampleHero
+          path: "#hero",
+          name: "Hero"
         },
         {
-          path: "button",
-          name: "Button",
-          component: ExampleButton
+          path: "#button",
+          name: "Button"
         }
       ]
     }
