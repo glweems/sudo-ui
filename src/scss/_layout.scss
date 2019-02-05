@@ -2,7 +2,7 @@ html {
   width: 100%;
   margin: 0;
   padding: none;
-  background: map-get($colors, dark);
+  @include background(bg);
 }
 
 body {

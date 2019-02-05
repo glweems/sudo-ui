@@ -16,7 +16,7 @@ export default {
 	.hero {
 		@extend %container-fluid;
 		@extend %border-radius;
-		@include background(bg);
+		@include background(dark);
 		@include color(light);
 	}
 </style>

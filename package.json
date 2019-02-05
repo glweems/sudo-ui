@@ -13,7 +13,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "bundle": "vue-cli-service build --dest ./dist/lib --target lib --name lib ./src/sudo-ui.js"
+    "now-build": "npm run build"
   },
   "dependencies": {
     "vue": "^2.6.0",
