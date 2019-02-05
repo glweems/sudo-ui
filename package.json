@@ -2,7 +2,6 @@
   "name": "sudo-ui",
   "version": "0.1.0",
   "private": true,
-  "main": "./dist/lib/lib.common.js",
   "files": [
     "dist/*",
     "src/*",
@@ -13,7 +12,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "now-start": "npm run build"
+    "now-build": "npm run build"
   },
   "dependencies": {
     "vue": "^2.6.0",

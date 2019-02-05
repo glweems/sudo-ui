@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
 	@import "@/scss/app.scss";
 	.card {
+		margin: 1em 0 1em 0;
 		background-clip: border-box;
 		@include background(dark);
 		border: 1px solid rgba(0, 0, 0, 0.125);

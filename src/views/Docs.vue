@@ -1,6 +1,5 @@
 <template>
 	<div class="docs">
-		<!-- <SudoHero title="Documentation"/> -->
 		<SudoSidebar v-if="sidebarOpen" title="title" :items="sidebarData"/>
 		<div class="content">
 			<div class="example">
@@ -14,8 +13,10 @@
 				<SudoList :items="demo.SudoList.data.items"/>
 			</div>
 			<div class="example">
+				<h1>Default Card</h1>
 				<SudoCard/>
-				<SudoCard img="../public/favicon.ico"/>
+				<h1>Card with Img</h1>
+				<SudoCard :img="pubImg('logo.png')"/>
 			</div>
 		</div>
 	</div>
@@ -49,6 +50,11 @@ export default {
 				}
 			}
 		};
+	},
+	methods: {
+		pubImg: img => {
+			return process.env.BASE_URL + img;
+		}
 	},
 	computed: {
 		...mapState(["docs", "sidebarOpen"]),
