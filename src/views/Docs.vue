@@ -16,7 +16,7 @@
 				<h1>Default Card</h1>
 				<SudoCard/>
 				<h1>Card with Img</h1>
-				<SudoCard :img="pubImg('logo.png')"/>
+				<SudoCard :img="`${publicPath}logo.png`"/>
 			</div>
 		</div>
 	</div>
@@ -50,11 +50,6 @@ export default {
 				}
 			}
 		};
-	},
-	methods: {
-		pubImg: img => {
-			return process.env.BASE_URL + img;
-		}
 	},
 	computed: {
 		...mapState(["docs", "sidebarOpen"]),
