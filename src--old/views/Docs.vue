@@ -5,9 +5,9 @@
 			<div class="example">
 				<h1>Hero</h1>
 				<h4>Hero Component Settings</h4>
-				<SudoHero title="Hero Component"/>
+				<Hero :title="demo.SudoHero.subtitle"/>
 			</div>
-			<div class="example">
+			<!-- <div class="example">
 				<h1>SudoList</h1>
 				<h4>Hero Component Settings</h4>
 				<SudoList :items="demo.SudoList.data.items"/>
@@ -33,7 +33,7 @@
 					:body="demo.SudoCard.data.body"
 					:footer="demo.SudoCard.data.footer"
 				/>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </template>

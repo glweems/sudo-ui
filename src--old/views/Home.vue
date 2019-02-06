@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<SudoHero title="Home"/>
+		<!-- <SudoHero title="Home"/> -->
 	</div>
 </template>
 

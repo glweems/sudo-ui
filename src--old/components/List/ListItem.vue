@@ -1,11 +1,16 @@
 <template>
-	<li class="list-item">{{item}}</li>
+	<li>{{item}}</li>
 </template>
 
 <script>
 export default {
 	name: "ListItem",
-	props: ["item"]
+	props: {
+		item: {
+			required: true,
+			default: "List Item"
+		}
+	}
 };
 </script>
 
