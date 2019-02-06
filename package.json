@@ -1,17 +1,19 @@
 {
   "name": "sudo-ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "files": [
-    "dist/*",
+    "dist/lib/*",
     "src/*",
-    "public/*",
     "*.json",
     "*.js"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run build-docs && npm run bundle-js && npm run bundle-scss",
+    "build-docs": "vue-cli-service build",
+    "bundle-js": "vue-cli-service build --dest ./dist/lib --target lib --name sudo-ui ./src/index.js",
+    "bundle-scss": "mkdir ./dist/lib/scss && cp -a ./src/scss/. ./dist/lib/scss/.",
+    "copy-package": "cp ./package.json ./dist/lib/package.json",
     "now-build": "npm run build"
   },
   "dependencies": {

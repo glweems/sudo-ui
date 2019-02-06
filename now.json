@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": "sudo-ui.now.sh",
+  "alias": ["sudo-ui.now.sh", "www.sudo-ui.now.sh"],
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "routes": [
     { "src": "^/js/(.*)", "dest": "/js/$1" },

@@ -7,8 +7,7 @@ module.exports = {
         root: ["./src"],
         alias: {
           "#": "./src/components/",
-          "~": "./node_modules/",
-          Public: "./public/"
+          "~": "./node_modules/"
         }
       }
     ]
