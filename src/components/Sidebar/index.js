@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+import Sidebar from "#/navbar/Navbar";
 import { use, registerComponent } from "@/utils/plugins";
 
 const Plugin = {
