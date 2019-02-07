@@ -9,4 +9,15 @@ export default {
 };
 </script> <style lang="scss" scoped>
 	@import "@/scss/sudo-ui.scss";
+	.navbar {
+		height: 40px;
+		display: flex;
+		align-items: center;
+		padding: 0 10px 0 10px;
+		a {
+			@include color(bg);
+		}
+		@include background(light);
+		width: 100%;
+	}
 </style>

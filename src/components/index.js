@@ -1,7 +1,7 @@
-import Hero from "./hero";
-import List from "./list";
-import Card from "./card";
-import Example from "./example";
+import Hero from "./Hero";
+import List from "./List";
+import Card from "./Card";
+import Example from "./Example";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
