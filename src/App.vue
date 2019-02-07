@@ -1,5 +1,6 @@
 <template>
 	<div id="app">
+		<Navbar :brand="navbar.data.brand"/>
 		<Example :name="hero.name" :desc="hero.desc">
 			<Hero :title="hero.data.title" :subtitle="hero.data.subtitle" :msg="hero.data.msg"/>
 		</Example>
@@ -23,6 +24,15 @@ export default {
 	name: "App",
 	data() {
 		return {
+			navbar: {
+				name: "Navbar",
+				data: {
+					brand: {
+						name: "Sudo-Ui",
+						link: "/"
+					}
+				}
+			},
 			hero: {
 				name: "Hero",
 				desc: "This is a Hero Component",
