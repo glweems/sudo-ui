@@ -2,13 +2,15 @@
 	<nav class="navbar">
 		<a :href="brand.link">{{ brand.name }}</a>
 	</nav>
-</template> <script>
+</template>
+<script>
 export default {
 	name: "Navbar",
-	props: { brand: { type: Object, default: { name: "Sudo-Ui", link: "/" } } }
+	props: { brand: { type: Object } }
 };
-</script> <style lang="scss" scoped>
-	@import "@/scss/sudo-ui.scss";
+</script>
+<style lang="scss" scoped>
+	@import "sudo-styling/scss/sudo-styling.scss";
 	.navbar {
 		height: 40px;
 		display: flex;

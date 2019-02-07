@@ -1,14 +1,14 @@
 <template>
-	<div class="template">template</div>
+  <div class="template">template</div>
 </template>
 
 <script>
 export default {
-	name: "Template",
-	props: { title: { type: String, required: false } }
+  name: "Template",
+  props: { title: { type: String, required: false } }
 };
 </script>
 
 <style lang="scss" scoped>
-	@import "@/scss/sudo-ui.scss";
+@import "@/scss/sudo-ui.scss";
 </style>

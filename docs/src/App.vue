@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss">
-	@import "@/scss/sudo-ui.scss";
+	@import "sudo-styling/scss/sudo-styling.scss";
 	#app {
 		overflow: hidden;
 		display: grid;

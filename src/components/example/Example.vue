@@ -1,7 +1,7 @@
 <template>
 	<div class="example">
-		<h1>{{name}}</h1>
-		<p>{{desc}}</p>
+		<h1>{{ name }}</h1>
+		<p>{{ desc }}</p>
 		<slot></slot>
 	</div>
 </template>
@@ -14,5 +14,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	@import "@/scss/sudo-ui.scss";
+	@import "sudo-styling/scss/sudo-styling.scss";
+	.example {
+		height: 90vh;
+		border-bottom: 2px solid map-get($colors, dark);
+	}
 </style>

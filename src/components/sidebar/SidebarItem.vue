@@ -1,13 +1,12 @@
 <template>
-	<div class="sidebar-item">{{ item }}</div>
+  <div class="sidebar-item">{{ item }}</div>
 </template>
 
 <script>
 export default {
-	name: "SidebarItem",
-	props: ["item"]
+  name: "SidebarItem",
+  props: ["item"]
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

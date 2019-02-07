@@ -1,5 +1,5 @@
-import Navbar from "#/navbar/Navbar";
-import { use, registerComponent } from "@/utils/plugins";
+import Navbar from "./Navbar";
+import { use, registerComponent } from "../../utils/plugins";
 const Plugin = {
   install(Vue) {
     registerComponent(Vue, Navbar);

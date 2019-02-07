@@ -1,4 +1,4 @@
-import "./scss/sudo-ui.scss";
+import "sudo-styling/scss/sudo-styling.scss";
 
 import * as components from "./components";
 
