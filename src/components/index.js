@@ -1,8 +1,8 @@
-import Hero from "./Hero";
-import List from "./List";
-import Card from "./Card";
-import Example from "./Example";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Hero from "./hero";
+import List from "./list";
+import Card from "./card";
+import Example from "./example";
+import Navbar from "./navbar";
+import Sidebar from "./sidebar";
 
 export { Hero, List, Card, Example, Navbar, Sidebar };
