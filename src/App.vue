@@ -1,21 +1,27 @@
 <template>
 	<div id="app">
+		<!-- Navbar -->
 		<Navbar :brand="navbar.data.brand"/>
-		<Example :name="hero.name" :desc="hero.desc">
-			<Hero :title="hero.data.title" :subtitle="hero.data.subtitle" :msg="hero.data.msg"/>
-		</Example>
-		<Example :name="list.name" :desc="list.desc">
-			<List :items="list.data.items"/>
-		</Example>
-		<Example :name="card.name" :desc="card.desc">
-			<Card
-				:header="card.data.header"
-				:title="card.data.title"
-				:body="card.data.body"
-				:img="card.data.img"
-				:footer="card.data.footer"
-			/>
-		</Example>
+		<!-- Sidebar -->
+		<Sidebar :sections="sidebar.data.sections"/>
+		<!-- Examples -->
+		<div class="content">
+			<Example :key="hero.name" :name="hero.name" :desc="hero.desc">
+				<Hero :title="hero.data.title" :subtitle="hero.data.subtitle" :msg="hero.data.msg"/>
+			</Example>
+			<Example :key="list.name" :name="list.name" :desc="list.desc">
+				<List :items="list.data.items"/>
+			</Example>
+			<Example :key="card.name" :name="card.name" :desc="card.desc">
+				<Card
+					:header="card.data.header"
+					:title="card.data.title"
+					:body="card.data.body"
+					:img="card.data.img"
+					:footer="card.data.footer"
+				/>
+			</Example>
+		</div>
 	</div>
 </template>
 
@@ -30,6 +36,20 @@ export default {
 					brand: {
 						name: "Sudo-Ui",
 						link: "/"
+					}
+				}
+			},
+			sidebar: {
+				data: {
+					sections: {
+						installation: {
+							link: "/",
+							items: ["Step 1", "Step 2"]
+						},
+						components: {
+							link: "/",
+							items: ["Navbar", "Sidebar", "Hero", "List", "Card"]
+						}
 					}
 				}
 			},
@@ -68,10 +88,24 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+	@import "@/scss/sudo-ui.scss";
 	#app {
-		max-width: 100%;
-		margin: 1em;
+		display: grid;
+		grid-template-columns: 20% 80%;
+		justify-content: space-between;
+		grid-row-gap: 10px;
+		max-width: 100vw;
+	}
+
+	.navbar {
+		grid-column: 1 / span 2;
+	}
+
+	.content {
+		width: 80%;
+		justify-self: center;
+		margin: 0 1em 0 1em;
 	}
 </style>
 
