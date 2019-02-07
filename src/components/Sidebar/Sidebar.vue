@@ -1,16 +1,23 @@
 <template>
 	<div class="sidebar">
-		<template v-if="sections">
+		<!-- Collapsed Sidebar -->
+		<div class="collapsed-sidebar">
+			<p>sidebar is {{ isOpen }}</p>
+			<button class="sidebar-toggle" @click="toggleSidebar">hi</button>
+		</div>
+
+		<div v-if="sections" :class="[{ active: classObject.active }, classObject.hidden]">
 			<SidebarSection
 				v-for="(section, key) in sections"
 				:key="key"
 				:items="section.items"
 				:section="key"
 			/>
-		</template>
-		<template v-if="items">
+		</div>
+
+		<div v-if="items" class="items">
 			<SidebarItem v-for="(item, index) in items" :key="index" :item="item"/>
-		</template>
+		</div>
 	</div>
 </template> 
 
@@ -23,14 +30,49 @@ export default {
 	components: {
 		SidebarSection,
 		SidebarItem
+	},
+	data() {
+		return {
+			isOpen: false,
+			classObject: {
+				active: "sidebar-content",
+				hidden: ""
+			}
+		};
+	},
+	methods: {
+		toggleSidebar() {
+			this.isOpen = !this.isOpen;
+			if (this.isOpen) {
+				this.classObject.hidden = "hidden";
+			}
+			if (!this.isOpen) {
+				this.classObject.hidden = "";
+			}
+		}
 	}
 };
 </script> 
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import "@/scss/sudo-ui.scss";
 	.sidebar {
-		padding: 1em;
+		padding: 0 1em;
 		@include background(dark);
+	}
+	.collapsed-sidebar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+		align-items: center;
+	}
+
+	.hidden {
+		@media only screen and (max-width: 576px) {
+			.sidebar-section {
+				display: none;
+			}
+		}
 	}
 </style>

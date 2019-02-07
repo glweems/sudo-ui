@@ -88,14 +88,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import "@/scss/sudo-ui.scss";
 	#app {
+		overflow: hidden;
 		display: grid;
-		grid-template-columns: 20% 80%;
+		grid-template-columns: 25% 1fr;
 		justify-content: space-between;
 		grid-row-gap: 10px;
-		max-width: 100vw;
+		max-width: 100%;
 	}
 
 	.navbar {
@@ -103,9 +104,19 @@ export default {
 	}
 
 	.content {
-		width: 80%;
+		// width: 80%;
 		justify-self: center;
-		margin: 0 1em 0 1em;
+		// margin: 0 1em 0 1em;
+	}
+
+	@media only screen and (max-width: 576px) {
+		.content {
+			justify-content: center;
+			grid-column: 1 / span 2;
+		}
+		.sidebar {
+			grid-column: 1 / span 2;
+		}
 	}
 </style>
 
