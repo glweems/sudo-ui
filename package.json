@@ -1,6 +1,6 @@
 {
   "name": "sudo-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "glweems",
   "main": "dist/sudo-ui.common.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "build": "vue-cli-service build --dest ./dist --target lib --name sudo-ui ./src/index.js --fix"
   },
   "dependencies": {
+    "sudo-styling": "^1.0.0",
     "vue": "^2.6.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
