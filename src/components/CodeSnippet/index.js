@@ -1,15 +1,10 @@
-import Example from "./Example";
-
+import CodeSnippet from "./CodeSnippet";
 import { use, registerComponent } from "../../utils/plugins";
-
 const Plugin = {
   install(Vue) {
-    registerComponent(Vue, Example);
+    registerComponent(Vue, CodeSnippet);
   }
 };
-
 use(Plugin);
-
 export default Plugin;
-
-export { Example };
+export { CodeSnippet };

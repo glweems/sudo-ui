@@ -1,11 +1,11 @@
 <template>
-  <div class="sidebar-item">{{ item }}</div>
+	<li class="sidebar-item">{{ item }}</li>
 </template>
 
 <script>
 export default {
-  name: "SidebarItem",
-  props: ["item"]
+	name: "SidebarItem",
+	props: ["item"]
 };
 </script>
 
